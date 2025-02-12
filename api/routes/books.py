@@ -57,7 +57,7 @@ async def get_a_book(book_id: int) -> Book:
         book_id (int): The unique identifier of the book.
     
     Returns:
-        Book: The book details if found.
+        Book: The book details if found. (type => Book)
         
     Raises:
         JSONResponse: 404 error if book is not found.
@@ -73,7 +73,6 @@ async def get_a_book(book_id: int) -> Book:
         status_code=status.HTTP_200_OK,
         content=book.model_dump()
     )
-
 
 @router.put("/{book_id}", response_model=Book, status_code=status.HTTP_200_OK)
 async def update_book(book_id: int, book: Book) -> Book:
