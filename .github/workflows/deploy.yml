@@ -22,9 +22,10 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
           cd ~/HNG_2/fastapi-book-project
-          git pull origin main
-          source ~/HNG_2Venv/bin/activate
+          git fetch origin main
+          git merge origin main
+          source ~/HNG_2/HNG_venv/bin/activate
+          sudo apt install python3-pip -y
           pip install -r requirements.txt
           sudo systemctl restart fastapi
           sudo systemctl restart nginx
-

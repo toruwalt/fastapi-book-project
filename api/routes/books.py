@@ -57,7 +57,7 @@ async def get_a_book(book_id: int) -> Book:
         book_id (int): The unique identifier of the book.
     
     Returns:
-        Book: The book details if found. (type => Book)
+        Book: The book details if found. (type => Book (^-^))
         
     Raises:
         JSONResponse: 404 error if book is not found.
