@@ -2,7 +2,7 @@ name: CD Pipeline
 
 on:
 
-  pull_request:
+  push:
     branches:
       - main
 
@@ -22,9 +22,7 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
           cd ~/HNG_2/fastapi-book-project
-          git fetch origin main
-          git checkout main
-          git reset --hard origin/main  
+          git pull origin main  
           source ~/HNG_2/HNG_venv/bin/activate
           sudo apt install python3-pip -y
           pip install -r requirements.txt
